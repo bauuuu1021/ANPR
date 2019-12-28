@@ -1,2 +1,5 @@
 def detect(image):
-    return True
+    return True    
+
+if __name__ == "__main__":
+    print('License plate detection')
