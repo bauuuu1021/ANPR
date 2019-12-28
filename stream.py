@@ -17,7 +17,7 @@ sock.send(name.encode('utf-8'))
 capture=cv2.VideoCapture(name)
 success , frame = capture.read()
 c=0
-while(success and c<400):
+while(success):
     c+=1
     print(c)
     _,imgencode=cv2.imencode('.jpg',frame,[int(cv2.IMWRITE_JPEG_QUALITY),90])
