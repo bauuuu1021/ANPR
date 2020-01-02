@@ -16,16 +16,15 @@ def extract_contours(threshold_img):
 	element = cv2.getStructuringElement(shape=cv2.MORPH_RECT, ksize=(17, 3))
 	morph_img_threshold = threshold_img.copy()
 	cv2.morphologyEx(src=threshold_img, op=cv2.MORPH_CLOSE, kernel=element, dst=morph_img_threshold)
-	contours, hierarchy= cv2.findContours(morph_img_threshold,mode=cv2.RETR_EXTERNAL,method=cv2.CHAIN_APPROX_NONE)
+	_, contours, hierarchy= cv2.findContours(morph_img_threshold,mode=cv2.RETR_EXTERNAL,method=cv2.CHAIN_APPROX_NONE)
 	
 	return contours
 
 def detect(img):
 	threshold_img = preprocess(img)
 	contours= extract_contours(threshold_img)
-	print(len(contours))
 	
-	if (len(contours) > 350):
+	if (len(contours) > 0):
 		return True	 
 
 def main():

@@ -2,7 +2,8 @@ import socket
 import cv2
 import numpy as np
 from hdfs import InsecureClient
-from detect import *
+#from detect import *
+from LicensePlateRec import *
 
 host = '0.0.0.0'
 port = 12345
